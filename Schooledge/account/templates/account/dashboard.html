@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container-fluit">
+    <div class="row" >
+        
+    
+            <div class="col-sm-3" >
+                <nav class="navbar" style="background-color: rgb(2, 2, 87);">
+                    {% if request.user.is_authenticated %}
+                    <ul class="menu" style="list-style-type: none;">
+                        <li style="color: azure;">Marvelous School</li>
+                        <li {% if section == 'dashboard' %}class='selected'{% endif %}>
+                            <a href="{% url "dashboard" %}" style="color: azure;">Dashboard</a>
+                        </li>
+                        <li {% if section == "Admin" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Admin</a>
+                        </li>
+                        <li {% if section == "Alumni" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Alumni</a>
+                        </li>
+                        <li {% if section == "Hotel" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Hotel</a>
+                        </li>
+                        <li {% if section == "Home slide" %}class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Home slide</a>
+                        </li>
+                        <li {% if section == "Roles" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Roles</a>
+                        </li>
+                        <li {% if section == "Result" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Result</a>
+                        </li>
+                        <li {% if section == "cashbook" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Cashbook</a>
+                        </li>
+                        <li {% if section == "Alumni" %} class='selected'{% endif %}>
+                            <a href='#' style="color: azure;">Alumni</a>
+                        </li>
+                        <li {% if section == "Finance" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Finance</a>
+                        </li>
+                        <li {% if section == "Academic" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Academic</a>
+                        </li>
+                        <li {% if section == "Academic" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Finance</a>
+                        </li>
+                        <li {% if section == "Student" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Student</a>
+                        </li>
+                        <li {% if section == "Gallary" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Gallary</a>
+                        </li>
+                        <li {% if section == "Admissions" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Admissions</a>
+                        </li>
+                        <li {% if section == "Message" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Message</a>
+                        </li>
+                        <li {% if section == "News/Events" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">News/Events</a>
+                        </li>
+                        <li {% if section == "Library" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Library</a>
+                        </li>
+                        <li {% if section == "Parents" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Parents</a>
+                        </li>
+                        <li {% if section == "Setting" %} class= 'selected'{% endif %}>
+                            <a href='#' style="color: azure;">Setting</a>
+                        </li>
+                        <li {% if section == "change_password" %} class= 'selected'{% endif %}>
+                            <a href='{% url "password_change" %}' style="color: azure;">Change password</a>
+                        </li>
+                    </ul>
+                    
+                    {% endif %}
+                </nav>
+            </div>        
+            <div class="col-sm-9">
+                <div class="row-sm-2" style="background-color: #fff; padding: 30px; border-radius: 5px; box-shadow: 0, 2px,5px (0,0,0,0.1); width: 400px;">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to your Dashboard</p>
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'Vectary texture.png' %}" alt="icon" width="36" height="30">
+                    </a>
+                </div>
+                <div class="row-sm-10">
+
+                </div>
+            </div>
+            
+    </div>   
+</div>
+{% endblock %}
+
+

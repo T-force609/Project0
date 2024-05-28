@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create an account</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        {% block content %}
+        <div class="container form-label row g-3 align-items-center" style="background-image: -moz-linear-gradient(to right, #6f42c1, #fff);;">
+            <h1>Create an account</h1>
+            <p>Please, sign up using the following form:</p>
+            <form method="post">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <p><button type="submit" class="btn btn-primary">Create an account</button></p>
+            </form>
+        </div>
+        {% endblock %}
+    </body>
+
+
+</html>
