@@ -6,91 +6,96 @@
     <div class="row" >
         
     
-            <div class="col-sm-3" >
-                <nav class="navbar" style="background-color: rgb(2, 2, 87);">
-                    {% if request.user.is_authenticated %}
-                    <ul class="menu" style="list-style-type: none;">
-                        <li style="color: azure;">Marvelous School</li>
-                        <li {% if section == 'dashboard' %}class='selected'{% endif %}>
+            <div class="col-sm-2" style=" height: 100%;" >
+                <nav class="navbar" style="border-radius: 15px; background-color: #a178ec; height: 100%;">
+                    
+                        <ul class="menu" style="list-style-type: none;">
+                        <li {% if section == 'Rectangle  83.png'%} class="selectied" {% endif %} style="padding: 10px 0px;">
+                            <div class="frame" style="border-radius: 10px; background-color: #854bf0; width: 100px; height: 100px;"><img src="{% static 'Rectangle 83.png' %}" alt="T-force" style="margin-left: 15px; margin-top: 10px;"></div>
+                        </li>
+                        <li {% if section == 'dashboard' %}class='selected'{% endif %} style="padding: 10px 0px;">
                             <a href="{% url "dashboard" %}" style="color: azure;">Dashboard</a>
                         </li>
-                        <li {% if section == "Admin" %} class='selected'{% endif %}>
-                            <a href='#' style="color: azure;">Admin</a>
+                        <li {% if section == "Payment info" %} class='selected'{% endif %} style="padding: 10px 0px;" >
+                            <a href='{% url "payment"%}' style="color: azure;">Payment info</a>
                         </li>
-                        <li {% if section == "Alumni" %} class='selected'{% endif %}>
-                            <a href='#' style="color: azure;">Alumni</a>
+                        <li {% if section == "Rigistration" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Registration</a>
                         </li>
-                        <li {% if section == "Hotel" %} class='selected'{% endif %}>
-                            <a href='#' style="color: azure;">Hotel</a>
+                        <li {% if section == "Subject" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Subject</a>
                         </li>
-                        <li {% if section == "Home slide" %}class='selected'{% endif %}>
-                            <a href='#' style="color: azure;">Home slide</a>
+                        <li {% if section == "Drop semeter" %}class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Drop semeter</a>
                         </li>
-                        <li {% if section == "Roles" %} class='selected'{% endif %}>
-                            <a href='#' style="color: azure;">Roles</a>
-                        </li>
-                        <li {% if section == "Result" %} class='selected'{% endif %}>
+                        <li {% if section == "Result" %} class='selected'{% endif %} style="padding:10px 0px;">
                             <a href='#' style="color: azure;">Result</a>
                         </li>
-                        <li {% if section == "cashbook" %} class='selected'{% endif %}>
+                        <li {% if section == "Notice" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Notice</a>
+                        </li>
+                        <li {% if section == "cashbook" %} class='selected'{% endif %} style="padding: 10px 0px;">
                             <a href='#' style="color: azure;">Cashbook</a>
                         </li>
-                        <li {% if section == "Alumni" %} class='selected'{% endif %}>
-                            <a href='#' style="color: azure;">Alumni</a>
+                        <li {% if section == "Schedule" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Schedule</a>
                         </li>
-                        <li {% if section == "Finance" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Finance</a>
+                        
+                        <li {% if section == "password_change" %} class= 'selected'{% endif %} style="padding: 10px 0px;">
+                            <a href="{% url 'password_change' %}" style="color: azure;">change_password</a>
                         </li>
-                        <li {% if section == "Academic" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Academic</a>
-                        </li>
-                        <li {% if section == "Academic" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Finance</a>
-                        </li>
-                        <li {% if section == "Student" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Student</a>
-                        </li>
-                        <li {% if section == "Gallary" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Gallary</a>
-                        </li>
-                        <li {% if section == "Admissions" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Admissions</a>
-                        </li>
-                        <li {% if section == "Message" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Message</a>
-                        </li>
-                        <li {% if section == "News/Events" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">News/Events</a>
-                        </li>
-                        <li {% if section == "Library" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Library</a>
-                        </li>
-                        <li {% if section == "Parents" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Parents</a>
-                        </li>
-                        <li {% if section == "Setting" %} class= 'selected'{% endif %}>
-                            <a href='#' style="color: azure;">Setting</a>
-                        </li>
-                        <li {% if section == "change_password" %} class= 'selected'{% endif %}>
-                            <a href='{% url "password_change" %}' style="color: azure;">Change password</a>
-                        </li>
+                        <li {% if section == "log out" %} class= 'selected'{% endif %} style="padding-top: 50px;">
+                            <a href='#' style="color: azure;">log out</a>
+                        </li>        
                     </ul>
                     
-                    {% endif %}
+                    
                 </nav>
             </div>        
-            <div class="col-sm-9">
-                <div class="row-sm-2" style="background-color: #fff; padding: 30px; border-radius: 5px; box-shadow: 0, 2px,5px (0,0,0,0.1); width: 400px;">
-                    <h1>Dashboard</h1>
-                    <p>Welcome to your Dashboard</p>
-                    <a class="navbar-brand" href="#">
-                        <img src="{% static 'Vectary texture.png' %}" alt="icon" width="36" height="30">
-                    </a>
+            <div class="col-sm-10">
+                <span class="-ms-text-align-last:left ;">
+                    {% if request.user.is_authenticated %} 
+                    <a href='{% url "logout" %}'>Logout</a>
+                    {% else %}
+                    <a href="{% url "login" %}"> log-in</a>
+                    {% endif %}
+                </span>
+                <div class="row-sm-2 shadow" style="background-color: #a178ec; margin: 10px; border-radius: 20px; box-shadow: 0, 2px,5px (0,0,0,0.1); width: 96%; display: inline-block;">
+                    <div class="container-sm row-sm-6" style="width: 50%; float: left;">
+                        <h3 style="color: white;">Welcome back {{ request.user.first_name }}!</h3>
+                        <p style="color: white;">Alway stay updated in your student portal</p>
+                    </div>
+                    <div class="container-sm row-sm-6 ">
+                        <img src="{% static 'Untitled-1 1.png' %}" alt="icon" style="width: 400px; height:200px; float: right; margin-left: 10px;" class="circle-container">
+                    </div>
+                    
                 </div>
-                <div class="row-sm-10">
-
-                </div>
-            </div>
+                <p><b>Finance</b></p>
+                <dvi class="container d-flex flex-direction: column " >
+                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 15px; width: 15%; padding: 10px; height: 160px; margin-right: 30px; margin-bottom: 30px;">
+                        <img src='{% static "game-icons_coins.png" %}' alt="icon" style="height: 50px; width: 70px; height: 80px; margin-left: 30px; margin-top: 10px;">
+                        <p style="text-align: center;margin-bottom: 0px;"><b>#91,000</b></p>
+                        <p style="text-align: center; font-size: x-small;"><b>Total invoice</b></p>
+                    </div>
+                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 15px; width: 15%; padding: 10px; height: 160px; margin-right: 30px; margin-bottom: 30px;">
+                        <img src="{% static 'Vector(2).png' %}" alt="icon">
+                        <img src="{% static 'Vector(1).png' %}" alt="icon">
+                        <p style="text-align: center; margin-bottom: 0px;"><b>#47,000</b></p>
+                        <p style="text-align: center; font-size: x-small;"><b>Total paid</b></p>
+                    </div>
+                    <div class="row-sm-6 shadow" style="background-color: white; border-radius: 15px; width: 15%; padding: 10px; height: 160px; margin-right: 30px; margin-bottom: 30px;">
+                        <img src="{% static 'Vector.png'%}" alt="icon" style="height: 50px; width: 70px; height: 80px; margin-left: 30px; margin-top: 10px;">
+                        <p style="text-align: center; margin-bottom: 0px;"><b>#8,000</b></p>
+                        <p style="text-align: center; font-size: x-small;"><b>Others</b></p>
+                    </div>
+                </dvi>
+                <p><b>Enrolled courses</b></p>
+                <dvi class="container d-flex flex-direction: column">
+                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 20px; width: 25%; padding: 60px; margin-right: 20px; background-color: #ddd1f5;">
+                        <img src="{% static 'Vector(3).png' %}" alt="icon" style="float: right; margin: 0%; ">
+                    </div>
+                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 20px; width: 25%; padding: 60px; margin-right: 20px; background-color: #ddd1f5;"></div>
+                </dvi>
             
     </div>   
 </div>

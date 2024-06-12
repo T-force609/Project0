@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%} Payment{% endblock %}
+
+{% block content %}
+<div class="container-fluit">
+    <div class="row" >
+        
+    
+            <div class="col-sm-2" style=" height: 100%;" >
+                <nav class="navbar" style="border-radius: 15px; background-color: #a178ec; height: 100%;">
+                    
+                        <ul class="menu" style="list-style-type: none;">
+                        <li {% if section == 'Rectangle  83.png'%} class="selectied" {% endif %} style="padding: 10px 0px;">
+                            <div class="frame" style="border-radius: 10px; background-color: #854bf0; width: 100px; height: 100px;"><img src="{% static 'Rectangle 83.png' %}" alt="T-force" style="margin-left: 15px; margin-top: 10px;"></div>
+                        </li>
+                        <li {% if section == 'dashboard' %}class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href="{% url "dashboard" %}" style="color: azure;">Dashboard</a>
+                        </li>
+                        <li {% if section == "Payment info" %} class='selected'{% endif %} style="padding: 10px 0px;" >
+                            <a href='{% url "payment"%}' style="color: azure;">Payment info</a>
+                        </li>
+                        <li {% if section == "Rigistration" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Registration</a>
+                        </li>
+                        <li {% if section == "Subject" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Subject</a>
+                        </li>
+                        <li {% if section == "Drop semeter" %}class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Drop semeter</a>
+                        </li>
+                        <li {% if section == "Result" %} class='selected'{% endif %} style="padding:10px 0px;">
+                            <a href='#' style="color: azure;">Result</a>
+                        </li>
+                        <li {% if section == "Notice" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Notice</a>
+                        </li>
+                        <li {% if section == "cashbook" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Cashbook</a>
+                        </li>
+                        <li {% if section == "Schedule" %} class='selected'{% endif %} style="padding: 10px 0px;">
+                            <a href='#' style="color: azure;">Schedule</a>
+                        </li>
+                        
+                        <li {% if section == "password_change" %} class= 'selected'{% endif %} style="padding: 10px 0px;">
+                            <a href="{% url 'password_change' %}" style="color: azure;">change_password</a>
+                        </li>
+                        <li {% if section == "log out" %} class= 'selected'{% endif %} style="padding-top: 50px;">
+                            <a href='#' style="color: azure;">log out</a>
+                        </li>        
+                    </ul>
+                    
+                    
+                </nav>
+            </div>
+
+            <div class="col-sm-10">
+                <h3>payment History</h3>
+            </div>
+{% endblock %}
