@@ -36,22 +36,22 @@ def dashboard(request):
 def register(request):
             if request.method == 'POST':
                 user_form = UserRegistrationForm(request.POST)
-                user_form2 = UserParentForm(request.POST)
-                if user_form.is_valid() & user_form2.is_valid():
+                parentform = UserParentForm(request.POST)
+                if user_form.is_valid() & parentform.is_valid():
                     # Create a new user object but avoid saving it yet
                     new_user = user_form.save(commit=False)
-                    new_user2 = user_form2.save(commit=False)
+                    new_user2 = parentform.save(commit=False)
                     # Set the chosen password
                     new_user.set_password(user_form.cleaned_data['password'])
                     # Save the User object
                     new_user.save()
-                    new_user2.save()
-                    return render(request, 'account/register_done.html', {'new_user': new_user, 'user_form2':user_form2})
+                    parentform.save()
+                    return render(request, 'account/register_done.html', {'new_user': new_user, 'parentform' : parentform})
 
             else:
                 user_form = UserRegistrationForm()
-                user_form2 = UserParentForm()
-            return render(request, 'account/register.html', {'user_form': user_form, 'user_form2':user_form2 })
+                parentform = UserParentForm()
+            return render(request, 'account/register.html', {'user_form': user_form, 'parentform': parentform })
 
 def payment(request):
       return render(request, 'account/payment.')

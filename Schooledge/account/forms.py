@@ -20,7 +20,7 @@ class UserRegistrationForm(forms.ModelForm):
             return cd['password2']
 
         
-class UserParentForm(forms.Form):
-    class Mate:
+class UserParentForm(forms.ModelForm):
+    class Meta:
         model = ParentForm
         fields = ('Fathername', 'Mothername','F_number', 'M_number', 'F_occupation','M_occupation')

@@ -34,15 +34,29 @@
                             <p> Your username and password didn't match</p>
                             {% endif %}
                         
-                            <form action="{% url 'login' %}" method='post' class="form-label row g-1 align-items-center" style="background-color: #fff; padding: 6px; border-radius: 5px; box-shadow: 30px, 2px,5px (0,0,0,0.1); width: 520px; margin-top: 0px;">
+                            <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
                                 
-                                    {{ form.as_p }}
-                                    {% csrf_token %}
+                                    {{ form.username.errors }}
+                                    {{ form.username.label_tag }} {{ form.username }}
+                            
                                 
-                                <input type='hidden' name='next' value="{{ next }}" />
-                                <p style="text-align: right; "><a href='{% url "password_reset" %}' style="color: #000;">Forgotten password?</a></p>
+                                    {{ form.password.errors }}
+                                    {{ form.password.label_tag }} {{ form.password }}
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                
+                                {% url 'admin_password_reset' as password_reset_url %}
+                                {% if password_reset_url %}
+                                <div class="password-reset-link">
+                                
+                                </div>
+                                {% endif %}
+                                <div class="submit-row">
+                                    <p style="text-align: right; "><a href='{% url "password_reset" %}' style="color: #000;">Forgotten password?</a></p>
                                 <p style="text-align: center;"><button type="submit" class="btn btn-primary" style="background-color: rgb(1, 1, 112);">Log in</button></p>
                                 <p style="text-align: center;"><a href="{% url "register" %}" style="color: #000;">New Applicant</a></p>
+                                </div>
+                                </form>
+                                
                             </form>
                         </div>
 
@@ -55,3 +69,9 @@
         </div>
     </body>
 </html>
+
+
+
+    </div>
+</div>
+

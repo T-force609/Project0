@@ -36,7 +36,7 @@ class ParentForm(models.Model):
     F_number = models.IntegerField()
     M_number =models.IntegerField()
     F_occupation =models.CharField(max_length=15, blank=False)
-    M_occupaion = models.CharField(max_length=15, blank=False)
+    M_occupation = models.CharField(max_length=15, blank=False)
 
     class Mate:
         ordering = ('-date_of_birth',)
