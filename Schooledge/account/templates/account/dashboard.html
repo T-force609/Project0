@@ -47,7 +47,7 @@
                         <li {% if section == "log out" %} class= 'selected'{% endif %} style="padding-top: 50px;">
                             <form method="POST" action="{% url 'logout' %}">
                                 {% csrf_token %}
-                                <button style="display: block;">log out</button>
+                                <button style="display: block; background:none; color: white; border: none;">log out</button>
                             </form>
                             
                         </li>        
@@ -57,26 +57,19 @@
                 </nav>
             </div>        
             <div class="col-sm-10">
-                <span class="-ms-text-align-last:left ;">
-                    <form method="POST" action="{% url 'logout' %}">
-                        {% csrf_token %}
-                        <input type="submit" valve= >
-                    </form>
-                    
-                </span>
+                
                 <div class="row-sm-2 shadow" style="background-color: #a178ec; margin: 10px; border-radius: 20px; box-shadow: 0, 2px,5px (0,0,0,0.1); width: 96%; display: inline-block;">
-                    <div class="container-sm row-sm-6" style="width: 50%; float: left;">
+                    <span style="display: inline-block;">                        
+                        <p style="color: white;">{{ now }}</p>
                         <h3 style="color: white;">Welcome back {{ request.user.first_name }}!</h3>
                         <p style="color: white;">Alway stay updated in your student portal</p>
-                    </div>
-                    <div class="container-sm row-sm-6 ">
-                        <img src="{% static 'Untitled-1 1.png' %}" alt="icon" style="width: 400px; height:200px; float: right; margin-left: 10px;" class="circle-container">
-                    </div>
-                    
+                    </span>
+                        <img src="{% static 'shs 1.png'%}" alt="icon" style="width: 200px; float: right; margin-top: 70px; ">
+                        <img src="{% static 'Untitled-1 1.png' %}" alt="icon" style="width: 340px; height:180px; float: right; margin-top: 40px;  margin: 40px -145px 0px 0px;">
                 </div>
                 <p><b>Finance</b></p>
-                <dvi class="container d-flex flex-direction: column " >
-                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 15px; width: 15%; padding: 10px; height: 160px; margin-right: 30px; margin-bottom: 30px;">
+                <div class="container d-flex flex-direction: column " >
+                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 15px; width: 15%; padding: 10px; height: 160px; margin-right: 30px;">
                         <img src='{% static "game-icons_coins.png" %}' alt="icon" style="height: 50px; width: 70px; height: 80px; margin-left: 30px; margin-top: 10px;">
                         <p style="text-align: center;margin-bottom: 0px;"><b>#91,000</b></p>
                         <p style="text-align: center; font-size: x-small;"><b>Total invoice</b></p>
@@ -92,16 +85,18 @@
                         <p style="text-align: center; margin-bottom: 0px;"><b>#8,000</b></p>
                         <p style="text-align: center; font-size: x-small;"><b>Others</b></p>
                     </div>
-                </dvi>
+                </div>
                 <p><b>Enrolled courses</b></p>
-                <dvi class="container d-flex flex-direction: column">
-                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 20px; width: 25%; padding: 60px; margin-right: 20px; background-color: #ddd1f5;">
-                        <img src="{% static 'Vector(3).png' %}" alt="icon" style="float: right; margin: 0%; ">
+                <div class="container d-flex flex-direction: column">
+                    <div class="col-sm-2 shadow" style="background-color: #c4abf1; border-radius: 20px; width: 25%;  margin-right: 20px; ">
+                        <img src="{% static 'Vector(3).png' %}" alt="icon" style="float: right; margin-top: 30px; ">
                     </div>
-                    <div class="col-sm-2 shadow" style="background-color: white; border-radius: 20px; width: 25%; padding: 60px; margin-right: 20px; background-color: #ddd1f5;"></div>
-                </dvi>
+                    <div class="col-sm-2 shadow" style="background-color: #c4abf1; border-radius: 20px; width: 25%; margin-right: 20px; padding: 15px;">
+                        <img src="{% static 'Vector(8).png' %}" alt="icon" style="float: right; margin-top: 30px; ">
+                    </div>
+                </div>
             
-    </div>   
+            </div>   
 </div>
 {% endblock %}
 

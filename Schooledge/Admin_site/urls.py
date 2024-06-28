@@ -10,6 +10,7 @@ urlpatterns =[
     path('', views.user_login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('admin_site/', views.Admin, name='admin_site'),
+    path('Roles/', views.Roles, name='Roles'),
     
-    
+
 ]

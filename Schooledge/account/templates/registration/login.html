@@ -36,7 +36,11 @@
                         
                             <form action="{% url 'login' %}" method='post' class="form-label row g-1 align-items-center" style="background-color: #fff; padding: 6px; border-radius: 5px; box-shadow: 30px, 2px,5px (0,0,0,0.1); width: 520px; margin-top: 0px;">
                                 
-                                    {{ form.as_p }}
+                                {{ form.username.label_tag }}
+                                    {{ form.username }}
+                                    {{ form.password.label_tag }}
+                                    
+                                    {{ form.password }}
                                     {% csrf_token %}
                                 
                                 <input type='hidden' name='next' value="{{ next }}" />

@@ -5,6 +5,7 @@ from .forms import LoginForm
 from django.http import HttpResponse
 
 
+
 # Create your views here.
 
 def user_login(request):
@@ -33,3 +34,7 @@ def user_login(request):
 @login_required
 def Admin(request):
     return render(request, 'Admin_site/admin.html',)
+
+def Roles(request):
+
+    return render(request, 'Admin_site/Roles.html')

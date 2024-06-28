@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import LoginForm, UserRegistrationForm, UserParentForm
+import datetime
 # Create your views here.
 
 '''
@@ -30,7 +31,9 @@ def user_login(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section':'dashboard'})
+    now = datetime.datetime.now()
+    return render(request, 'account/dashboard.html', {
+          'section':'dashboard', 'now': now})
 
 
 def register(request):
@@ -46,12 +49,14 @@ def register(request):
                     # Save the User object
                     new_user.save()
                     parentform.save()
-                    return render(request, 'account/register_done.html', {'new_user': new_user, 'parentform' : parentform})
+                    return render(request, 'account/register_done.html', {
+                          'new_user': new_user, 'parentform' : parentform})
 
             else:
                 user_form = UserRegistrationForm()
                 parentform = UserParentForm()
-            return render(request, 'account/register.html', {'user_form': user_form, 'parentform': parentform })
+            return render(request, 'account/register.html', {
+                  'user_form': user_form, 'parentform': parentform })
 
 def payment(request):
       return render(request, 'account/payment.')

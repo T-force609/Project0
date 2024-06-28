@@ -38,7 +38,7 @@
                             <a href='#' style="color: azure;"><img src="{% static 'Combined Shape.png'%}" alt=""> Home slide</a>
                         </li>
                         <li {% if section == "Roles" %} class='selected'{% endif %} style="margin: 5px;">
-                            <a href="#" style="color: azure;"><img src="{% static 'Combined Shape.png'%}" alt=""> Roles</a>
+                            <a href='{% url 'role' %}' style="color: azure;"><img src="{% static 'Combined Shape.png'%}" alt=""> Roles</a>
                         </li>
                         <li {% if section == "Result" %} class='selected'{% endif %} style="margin: 5px;">
                             <a href='#' style="color: azure;"><img src="{% static 'Combined Shape.png'%}" alt=""> Result</a>
